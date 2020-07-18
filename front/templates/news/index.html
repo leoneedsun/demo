@@ -1,0 +1,129 @@
+{% extends 'base/front_base.html' %}
+{% load news_filters %}
+
+{% block title %}小饭桌{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/news/index.min.css' %}">
+    <script src="{% static 'arttemplate/template-web.js' %}"></script>
+    <script src="{% static 'js/index.min.js' %}"></script>
+    <script id="news-item" type="text/html">
+        {% verbatim %}
+        {{ each newses news index }}
+        <li>
+            <!--左侧图片部分，thumbnail是缩略图的意思, 因为给art-template加了 {% verbatim %}，所以不能用一般的django方法，比如url-->
+            <div class="thumbnail_group">
+                <a href="/news/{{ news.id }}/">
+                    <img src="{{ news.thumbnail }}" alt="">
+                </a>
+            </div>
+            <!--右侧文字部分-->
+            <div class="news_group">
+                <p class="title">
+                    <a href="/news/{{ news.id }}/">{{ news.title }}</a>
+                </p>
+                <p class="desc">
+                    {{ news.desc }}
+                </p>
+                <p class="more">
+                    <span class="category"><a href="#">{{ news.category.name }}</a></span>
+                    <span class="pub_time">{{ news.pub_time|timeSince}}</span>
+                    <span class="author">{{ news.author.username }}</span>
+                </p>
+            </div>
+        </li>
+        {{ /each }}
+        {% endverbatim %}
+    </script>
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="wrapper">
+            <div class="main_content_wrapper">
+
+                <div class="banner_group" id="banner_group">
+                    <ul class="banner_ul" id="banner_ul">
+                        <li>
+                            <a href="#">
+                                <img src="https://static-image.xfz.cn/1585799101_895.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="https://static-image.xfz.cn/1585624042_417.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="https://edu-image.nosdn.127.net/7eba887f6518437c9196d565355dbf8c.png?imageView&quality=100&thumbnail=776y360&type=webp&lossless=1"
+                                     alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="https://static-image.xfz.cn/1585728685_608.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="https://edu-image.nosdn.127.net/f57a8fd28ce34f86bacce9991bbac210.png?imageView&quality=100&thumbnail=776y360&type=webp&lossless=1"
+                                     alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="arrow left_arrow">‹</span>
+                    <span class="arrow right_arrow">›</span>
+                    <div class="page_control_group">
+                        <ul class="page_control">
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="list_out_group">
+                    <ul class="list_tab">
+                        <li data-category="0" class="active"><a href="javascript:void(0)">最新资讯</a></li>
+                        {% for category in categories %}
+                            <li data-category="{{ category.pk }}"><a href="javascript:void(0)">{{ category.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <!--新闻列表-->
+                    <ul class="list_inner_group">
+                        {% for news in newses %}
+                            <li>
+                                <!--左侧图片部分，thumbnail是缩略图的意思-->
+                                <div class="thumbnail_group">
+                                    <a href="{% url 'news:news_detail' news_id=news.pk %}">
+                                        <img src="{{ news.thumbnail }}" alt="">
+                                    </a>
+                                </div>
+                                <!--右侧文字部分-->
+                                <div class="news_group">
+                                    <p class="title">
+                                        <a href="{% url 'news:news_detail' news_id=news.pk %}">{{ news.title }}</a>
+                                    </p>
+                                    <p class="desc">
+                                        {{ news.desc }}
+                                    </p>
+                                    <p class="more">
+                                        <span class="category"><a href="#">{{ news.category.name }}</a></span>
+                                        <span class="pub_time">{{ news.pub_time|time_since }}</span>
+                                        <span class="author">{{ news.author.username }}</span>
+                                    </p>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="load_more_group">
+                        <button class="load_more" id="load-more-btn">查看更多</button>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'common/sidebar.html' %}
+        </div>
+    </div>
+{% endblock %}

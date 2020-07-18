@@ -1,0 +1,44 @@
+@import "../common/constants";
+
+.main {
+  margin-top: $navHeight;
+
+  .course_nav {
+    width: 100%;
+    height: $courseNavHeight;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
+    .nav_container {
+      width: $pageWidth;
+      height: $courseNavHeight;
+      margin: 0 auto;
+      line-height: $courseNavHeight;
+
+      h3.title {
+        float: left;
+        color: $mainFontColor;
+        font-size: 24px;
+      }
+
+      .nav_list {
+        float: left;
+        margin-left: 167px;
+
+        li {
+          float: left;
+          margin-left: 41px;
+
+          a {
+            color: #888888;
+          }
+
+          &.active {
+            a {
+              color: $mainFontColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import "../common/init";
+@import "../common/header";
+@import "../common/body";
+@import "../common/footer";
+@import "../common/constants";
+@import "../course/course_nav";
+
+.main {
+
+  .wrapper {
+    .course_list {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      li {
+        width: 278px;
+        height: $courseItemHeight;
+        background-color: #ffffff;
+        margin-bottom: 20px;
+
+        // 一行4列的情况，需要处理两种情况，最后一个元素在第二列 和 最后一个元素在第三列的情况
+        &:last-child:nth-child(4n + 2) {
+          margin-right: calc((100% - 278px) / 3 * 2);
+        }
+
+        &:last-child:nth-child(4n + 3) {
+          margin-right: calc((100% - 278px) / 3 * 1);
+        }
+
+        &:hover {
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .thumbnail_group {
+          width: 100%;
+          height: $thumbnailHeight;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .course_info {
+          padding: 16px;
+          width: 100%;
+          box-sizing: border-box;
+          height: $courseItemHeight - $thumbnailHeight;
+          position: relative;
+
+          .title {
+            color: $mainFontColor
+          }
+
+          .author {
+            margin-top: 10px;
+            color: $assistFontColor;
+            font-size: 14px;
+          }
+
+          .price_group {
+            position: absolute;
+            left: 16px;
+            right: 16px;
+            bottom: 16px;
+
+            // <span>为行元素，对齐元素使用 text-align
+            text-align: right;
+
+            .free {
+              color: $freeColor;
+            }
+
+            .pay {
+              color: $payColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}

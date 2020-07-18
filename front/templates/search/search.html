@@ -1,0 +1,52 @@
+{% extends 'base/front_base.html' %}
+
+{% block title %}搜索{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/search/search.min.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="wrapper">
+            <div class="main_content_wrapper">
+                <div class="search_group">
+                    <form action="" method="get">
+                        <input type="text" class="search_input" placeholder="请输入关键字">
+                        <input type="submit" class="search_btn" value="搜索">
+                    </form>
+                </div>
+
+                <div class="recommend_group">
+                    <p class="recommend_title">热门推荐</p>
+                    <ul class="recommend_list">
+                        <li>
+                            <div class="thumbnail_group">
+                                <a href="#">
+                                    <img src="https://static-image.xfz.cn/1590624001_765.JPG" alt="">
+                                </a>
+                            </div>
+                            <div class="news_group">
+                                <p class="title">
+                                    <a href="#">
+                                        早报：孟晚舟未能获释；传字节跳动去年实现收入170亿美元；
+                                    </a>
+                                </p>
+                                <p class="desc">
+                                    百度智能云与央视网共同推出AI主播“小智”
+                                </p>
+                                <p class="more">
+                                    <span class="category">深度报道</span>
+                                    <span class="pub_time">1小时前</span>
+                                    <span class="author">知了课堂</span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            {% include 'common/sidebar.html' %}
+        </div>
+    </div>
+{% endblock %}

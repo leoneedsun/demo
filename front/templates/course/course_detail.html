@@ -1,0 +1,154 @@
+{% extends 'base/front_base.html' %}
+
+{% block title %}创业课堂{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/course/course_detail.min.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+
+        <div class="course_nav">
+            <div class="nav_container">
+                <h3 class="title">在线课堂</h3>
+                <ul class="nav_list">
+                    <li class="active"><a href="#">最新课堂</a></li>
+                    <li><a href="#">投资人说</a></li>
+                    <li><a href="#">明星案例</a></li>
+                    <li><a href="#">创业知识</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wrapper">
+
+            <div class="course_wrapper">
+                <div class="course_info">
+                    <p class="course_title">面对危机公关，多快算快</p>
+                    <div class="price_group">
+                        <div class="share_group">
+                            <span class="title">分享至：</span>
+                            <a class="weixin share_item"></a>
+                            <a href="#" class="weibo share_item"></a>
+                        </div>
+                        <div class="buy_group">
+                            <!--<span class="price pay">￥49.0</span>
+                            <a href="#" class="buy_btn">立即购买</a>-->
+                            <span class="price free">免费</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video_group">
+
+                </div>
+            </div>
+
+            <div class="bottom_wrapper">
+
+                <div class="course_detail_wrapper">
+                    <div class="item_group">
+                        <p class="item_title">课程讲师</p>
+
+                        <div class="teacher_group">
+                            <div class="avatar_group">
+                                <img src="https://static-image.xfz.cn/1534759763_905.png" alt="">
+                            </div>
+
+                            <div class="teacher_info">
+                                <p class="teacher_name">高超</p>
+                                <p class="teacher_desc">资深品牌公关</p>
+                            </div>
+                        </div>
+
+                        <div class="item_content">
+                            <p>
+                                18年专注于品牌公关传播领域，是国内较早一批公关传播从业人员，曾供职于奥美、诺基亚、亚马逊、百事、戴尔、Uber等公司，亚马逊及Uber优步在中国的首任公关总监。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item_group">
+                        <p class="item_title">课程简介</p>
+
+                        <div class="item_content">
+                            <p>
+                                危机公关需要掌握好“度”——速度。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item_group">
+                        <p class="item_title">课程大纲</p>
+
+                        <div class="item_content">
+                            <li><p>面对危机公关，多快算快？</p></li>
+                            <li><p>面对危机公关，谁出面做解释和声明最有效？</p></li>
+                            <li><p>案例分析：戴尔和罗永浩</p></li>
+                            <li><p>危机公关，真的是“唯快不破”吗？</p></li>
+                        </div>
+                    </div>
+
+                    <div class="item_group">
+                        <p class="item_title">帮助中心</p>
+
+                        <div class="item_content">
+                            <p>
+                                1. 购买后的课程在线可反复观看学习，视频有效期以具体课程信息为准。 <br>
+                                2. 课程暂不支持下载观看，均为在线观看视频。 <br>
+                                3. 课程一经购买，不可转让、不可退款；仅限购买账号观看。 <br>
+                                4. 如有问题请咨询客服饭桌君： 电话：18618172287 微信：fanzhuojun888 <br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item_group">
+                        <p class="item_title">关于小饭桌创业课堂在线课堂</p>
+
+                        <div class="item_content">
+                            <p>
+                                小饭桌创业课堂在线课堂是小饭桌旗下的线上视频课程产品，汇聚顶级创业大咖导师、行业资深专家，致力于用系统、垂直的知识体系让创业者认知升级、技能进阶。小饭桌创业课堂在线课堂用知识陪伴创业者从平凡到卓越！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommend_wrapper">
+                    <p class="recommend_title">推荐课堂</p>
+                    <ul class="course_list">
+                        <li>
+                            <a href="#">
+                                <div class="course_info_group">
+                                    <p class="course_title">创业CEO如何避免技术决策错误</p>
+                                    <p class="teacher">龚世海 / HiCTO创始人</p>
+                                </div>
+                                <div class="thumbnail_group">
+                                    <img src="https://static-image.xfz.cn/1563171621_723.png-course.list.small" alt=""
+                                         class="thumbnail">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="course_list">
+                        <li>
+                            <a href="#">
+                                <div class="course_info_group">
+                                    <p class="course_title">创业CEO如何避免技术决策错误</p>
+                                    <p class="teacher">龚世海 / HiCTO创始人</p>
+                                </div>
+                                <div class="thumbnail_group">
+                                    <img src="https://static-image.xfz.cn/1563171621_723.png-course.list.small" alt=""
+                                         class="thumbnail">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
